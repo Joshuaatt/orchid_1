@@ -2,7 +2,8 @@
 
 <ul>
   <% @stores.each do |store| %>
-  <li><%= link_to store.title, store_path(store) %></li>
+    <li><%= image_tag store.image.url(:thumb) %></li>
+    <li><%= link_to store.title, store_path(store) %></li>
   <% end %>
 </ul>
 

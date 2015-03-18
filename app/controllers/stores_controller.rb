@@ -14,7 +14,7 @@ class StoresController < ApplicationController
   end
 
   def create
-    @store = Store.new(params[:store])
+    @store = Store.new(store_params)
     if @store.save
       flash[:notice] = "Store created successfully"
       redirect_to stores_path
@@ -29,7 +29,7 @@ class StoresController < ApplicationController
 
   def update
     @store = Store.find(params[:id])
-    if $store.update(params[:store])
+    if $store.update(store_params)
       redirect_to stores_path
     else
       render :edit
