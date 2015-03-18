@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OSP</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <nav>
+    <h1>OSP</h1>
+    <p>The Orchid<br> Seedbank Project</p>
+    <ul>
+      <li>Store</li>
+      <li>About</li>
+      <li>Contact</li>
+    </ul>
+  </nav>
+
+<%= yield %>
+
+</body>
+</html>

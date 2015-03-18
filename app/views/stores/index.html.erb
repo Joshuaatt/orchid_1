@@ -1,0 +1,7 @@
+<h1>Stores</h1>
+
+<ul>
+  <% @stores.each do |store| %>
+  <li><%= link_to store.title, store_path(store) %></li>
+  <% end %>
+</ul>
