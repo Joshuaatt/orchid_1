@@ -23,7 +23,7 @@ class ProductsController < ApplicationController
     else
       flash[:error] = "This product was NOT deleted successfully"
     end
-    redirect_to store_path
+    redirect_to store_path(@store)
   end
 
 private
