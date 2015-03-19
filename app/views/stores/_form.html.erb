@@ -1,12 +1,15 @@
-<% render "layouts/errors", :object => @store %>
+<div class="admin_controls">
+  <h3>Admin controls:</h3>
+  <% render "layouts/errors", :object => @store %>
 
-<%= form_for @store, :url => stores_path, :html => { :multipart => true } do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %><br>
+  <%= form_for @store, :url => stores_path, :html => { :multipart => true } do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %><br>
 
-  <div class="field">
-    <%= f.label :image %>
-    <%= f.file_field :image %>
-  </div>
-  <%= f.submit %>
-<% end %>
+    <div class="field">
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+    </div>
+    <%= f.submit %>
+  <% end %>
+</div>

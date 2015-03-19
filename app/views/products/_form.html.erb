@@ -1,0 +1,10 @@
+<div class="admin_controls">
+  <h3>Admin controls:</h3>
+  <% render "layouts/errors", :object => @store %>
+
+  <%= form_for [@store, @product] do |f| %>
+    <%= f.label :product_name %>
+    <%= f.text_field :product_name %>
+    <%= f.submit %>
+  <% end %>
+</div>

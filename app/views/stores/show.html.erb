@@ -1,5 +1,28 @@
 <h1><%= @store.title %></h1>
 <%= image_tag @store.image.url(:thumb) %>
 
-<p><%= link_to "Delete", store_path(@store), data: { confirm: "Are you sure?", method: "delete" } %></p>
+<% if @store.products.any? %>
+  <% @store.products.each do |product| %>
+  <ul>
+    <li>
+      <%= product.product_name %>
+      <div class="admin_controls">
+        <%= link_to "Edit", edit_store_product_path(@store, product) %>
+        <%= link_to "Delete", store_product_path(@store, product), data: { confirm: "Are you sure?", method: "delete" } %>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>This store has no products yet</p>
+<% end %>
+
+
+<div class="admin_controls">
+  <h3>Admin controls:</h3>
+  <p><%= link_to "Edit", edit_store_path(@store) %></p>
+  <p><%= link_to "Delete", store_path(@store), data: { confirm: "Are you sure?", method: "delete" } %></p>
+  <p><%= link_to "Add product", new_store_product_path(@store, @product) %></p>
+</div>
+
 <p><%= link_to "Return to home", stores_path %></p>

@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
   root :to => 'stores#index'
-  
+
   devise_for :users
 
   resources :stores do
     resources :products do
-      member do
-      end
+  
     end
   end
   resources :faqs
