@@ -1,5 +1,5 @@
 <h1><%= @store.title %></h1>
-<%= image_tag @store.image.url(:medium) %>
+<%= image_tag @store.image.url(:thumb) %>
 
 <p><%= link_to "Delete", store_path(@store), data: { confirm: "Are you sure?", method: "delete" } %></p>
 <p><%= link_to "Return to home", stores_path %></p>
